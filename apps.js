@@ -1,11 +1,14 @@
 process.env.UV_THREADPOOL_SIZE = 10;
-console.log(process.env);
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var mustacheExpress = require('mustache-express');
 var app = express();
 var path = require("path");
 
+app.engine('html',mustacheExpress()); // load mustache templating in case needed
+app.set('view engine','html');
+app.set('views',__dirname + '/views');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -22,12 +25,24 @@ orm.setup(process.cwd()+'/models/registers', "skeletondb","root", "password", {
 			logging : false
 		});
 
+// static resources
+app.use(express.static(__dirname + '/js'));
+
 // All of the API for application
-require("./controllers/registers/jemaat_registers")(app);
+var jemaatRegisters = require("./controllers/registers/jemaat_registers");
+jemaatRegisters.setupService(app);
 
 // All of routes for application
 app.get('/', function(request, response){
-    response.sendFile(process.cwd() + '/views/jemaat.html');
+    response.sendFile(process.cwd() + '/views/registers/jemaat.html');
+});
+
+app.get('/personalData', function(request, response){
+    response.sendFile(process.cwd() + '/views/registers/personalData.html');
+});
+
+app.get('/personalDataDetail', function(request, response){
+	response.sendFile(process.cwd() + '/views/registers/personalDataDetail.html');
 });
 
 var server = app.listen(8081, function () {

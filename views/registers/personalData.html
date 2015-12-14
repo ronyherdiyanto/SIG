@@ -1,0 +1,222 @@
+
+<div class="container bootcards-container" id="main">
+	<div class="row">
+		<div class="col-sm-5 bootcards-list" id="list" data-title="Contacts">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="search-form">
+						<div class="row">
+							<div class="col-xs-9">
+								<div class="form-group">
+									<input type="text" class="form-control"
+										placeholder="Search Contacts..."> <i
+										class="fa fa-search"></i>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<a class="btn btn-primary btn-block" data-toggle="modal" data-target="#editModal"> <i class="fa fa-plus"></i> <span>Add</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="list-group">
+					<div ng-repeat="person in personalDatas">
+						<a class="list-group-item pjax {{person.status}}" href ui-sref="personalData.detail({idJemaat : {{person.idJemaat}}})" ng-click="setSelected(person);">
+							<h4 class="list-group-item-heading">{{person.firstName + ' ' + person.lastName}}</h4>
+							<p class="list-group-item-text">{{person.memberRelationship}}</p>
+						</a>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<small class="pull-left">Built with Bootcards - List</small> <a
+						class="btn btn-link btn-xs pull-right"
+						href="/snippets/list-detailed" data-toggle="modal"
+						data-target="#docsModal"> View Source</a>
+				</div>
+			</div>
+		</div>
+
+		<div ui-view></div>
+		
+	</div>
+
+
+</div>
+
+<!--modals-->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submit()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Add Contact</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Depan</label>
+						<div class="col-xs-8">
+							<input type="text" name="firstName" ng-model="jemaat.firstName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Belakang</label>
+						<div class="col-xs-8">
+							<input type="text" name="lastName" ng-model="jemaat.lastName" class="form-control"	value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Status Keanggotaan</label>
+						<div class="col-xs-8">
+							<input type="text" name="status" ng-model="jemaat.status" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Hubungan Antar Anggota</label>
+						<div class="col-xs-8">
+							<input type="text" name="memberRelationship" ng-model="jemaat.memberRelationship" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Lain Lain</label>
+						<div class="col-xs-8">
+							<input type="text" name="notes" ng-model="jemaat.notes" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Panggilan</label>
+						<div class="col-xs-8">
+							<input type="text" name="nickName" ng-model="jemaat.nickName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tempat Lahir</label>
+						<div class="col-xs-8">
+							<input type="text" name="birthPlace" ng-model="jemaat.birthPlace" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tanggal Lahir</label>
+						<div class="col-xs-8">
+							<input type="date" name="birthPlace" ng-model="jemaat.dateOfBirth"class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Suku</label>
+						<div class="col-xs-8">
+							<input type="text" name="etnic" ng-model="jemaat.etnic" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Jenis Kelamin</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.gender" class="form-control" value="">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Golongan Darah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.bloodType" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Rhesus</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.rhesus" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Setuju Donor?</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.agreeDonor" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Catatan Donor</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.donorNotes" class="form-control" value="">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Alamat Rumah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.homeAddress" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Telpon Rumah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.homePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Telpon Kantor</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.officePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nomor HP</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.mobilePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Email</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.email" class="form-control" value="">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Pendidikan Terakhir</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.lastEducation" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Catatan Pendidikan Terakhir</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.educationNotes" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Jurusan/Fakultas</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.major" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Gelar</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.title" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Spesialisasi</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="jemaat.specialization" class="form-control" value="">
+						</div>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

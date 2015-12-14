@@ -1,0 +1,473 @@
+
+<div class="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
+
+	<!--contact details & notes-->
+
+	<div id="contactCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Contact Details</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#editModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs"
+					href="/contacts/VBMJHwcLX3Vx/edit" data-toggle="modal"
+					data-target="#publicInfoModal"> <i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>ID</label>
+					<h4 class="list-group-item-heading">{{personDetail.idJemaat}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Depan</label>
+					<h4 class="list-group-item-heading">{{personDetail.firstName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Belakang</label>
+					<h4 class="list-group-item-heading">{{personDetail.lastName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Status Keanggotaan</label>
+					<h4 class="list-group-item-heading">{{personDetail.status}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Hubungan Antar Keanggotaan</label>
+					<h4 class="list-group-item-heading">{{personDetail.memberRelationship}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Lain lain</label>
+					<h4 class="list-group-item-heading">{{personDetail.notes}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Panggilan</label>
+					<h4 class="list-group-item-heading">{{personDetail.nickName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Tempat Lahir</label>
+					<h4 class="list-group-item-heading">{{personDetail.birthPlace}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Suku</label>
+					<h4 class="list-group-item-heading">{{personDetail.etnic}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Jenis Kelamin</label>
+					<h4 class="list-group-item-heading">{{personDetail.gender}}</h4>
+				</div>
+				
+			</div>
+			<div class="panel-footer">
+				<small class="pull-left">Built with Bootcards - Base Card</small> <a
+					class="btn btn-link btn-xs pull-right"
+					href="/snippets/base-card-form" data-toggle="modal"
+					data-target="#docsModal"> View Source</a>
+			</div>
+		</div>
+
+	</div>
+	
+	<div id="bloodTypeCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Informasi Golongan Darah</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#bloodInfoModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs"	data-toggle="modal"	data-target="#bloodInfoModal"> <i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Golongan Darah</label>
+					<h4 class="list-group-item-heading">{{personDetail.bloodType}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Rhesus</label>
+					<h4 class="list-group-item-heading">{{personDetail.rhesus}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Setuju Donor?</label>
+					<h4 class="list-group-item-heading">{{personDetail.agreeDonor}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Catatan Donor</label>
+					<h4 class="list-group-item-heading">{{personDetail.donorNote}}</h4>
+				</div>				
+			</div>
+			
+			<div class="panel-footer">
+				<small class="pull-left">Built with Bootcards - Base Card</small> <a
+					class="btn btn-link btn-xs pull-right"
+					href="/snippets/base-card-form" data-toggle="modal"
+					data-target="#docsModal"> View Source</a>
+			</div>
+		</div>
+
+	</div>
+	
+	<div id="addressCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Informasi Alamat</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#addressModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs"data-toggle="modal" data-target="#addressModal"> <i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Alamat Rumah</label>
+					<h4 class="list-group-item-heading">{{personDetail.homeAddress}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Telpon Rumah</label>
+					<h4 class="list-group-item-heading">{{personDetail.homePhone}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Telpon Kantor</label>
+					<h4 class="list-group-item-heading">{{personDetail.officePhone}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Nomor HP</label>
+					<h4 class="list-group-item-heading">{{personDetail.mobilePhone}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Email</label>
+					<h4 class="list-group-item-heading">{{personDetail.email}}</h4>
+				</div>				
+			</div>
+		</div>
+
+	</div>
+	
+	<div id="educationCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Informasi Pendidikan</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#educationModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs"	data-toggle="modal" data-target="#educationModal"> <i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Pendidikan Terakhir</label>
+					<h4 class="list-group-item-heading">{{personDetail.lastEducation}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Catatan Pendidikan</label>
+					<h4 class="list-group-item-heading">{{personDetail.educationNotes}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Jurusan Fakultas</label>
+					<h4 class="list-group-item-heading">{{personDetail.major}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Gelar</label>
+					<h4 class="list-group-item-heading">{{personDetail.title}}</h4>
+				</div>				
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>Spesialisasi</label>
+					<h4 class="list-group-item-heading">{{personDetail.specialization}}</h4>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</div>
+
+<!--modals-->
+<div class="modal fade" id="publicInfoModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submitPublicInfo()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Edit Informasi Umum</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Depan</label>
+						<div class="col-xs-8">
+							<input type="text" name="firstName" ng-model="personDetail.firstName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Belakang</label>
+						<div class="col-xs-8">
+							<input type="text" name="lastName" ng-model="personDetail.lastName" class="form-control"	value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Status Keanggotaan</label>
+						<div class="col-xs-8">
+							<input type="text" name="status" ng-model="personDetail.status" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Hubungan Antar Anggota</label>
+						<div class="col-xs-8">
+							<input type="text" name="memberRelationship" ng-model="personDetail.memberRelationship" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Lain Lain</label>
+						<div class="col-xs-8">
+							<input type="text" name="notes" ng-model="personDetail.notes" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Panggilan</label>
+						<div class="col-xs-8">
+							<input type="text" name="nickName" ng-model="personDetail.nickName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tempat Lahir</label>
+						<div class="col-xs-8">
+							<input type="text" name="birthPlace" ng-model="personDetail.birthPlace" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tanggal Lahir</label>
+						<div class="col-xs-8">
+							<input type="text" name="birthPlace" ng-model="personDetail.dateOfBirth" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Suku</label>
+						<div class="col-xs-8">
+							<input type="text" name="etnic" ng-model="personDetail.etnic" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Jenis Kelamin</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.gender" class="form-control" value="">
+						</div>
+					</div>					
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="bloodInfoModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submit()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Edit Informasi Golongan Darah</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Golongan Darah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.bloodType" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Rhesus</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.rhesus" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Setuju Donor?</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.agreeDonor" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Catatan Donor</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.donorNote" class="form-control" value="">
+						</div>
+					</div>					
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submit()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Edit Informasi Alamat</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Alamat Rumah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.homeAddress" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Telpon Rumah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.homePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Telpon Kantor</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.officePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nomor HP</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.mobilePhone" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Email</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.email" class="form-control" value="">
+						</div>
+					</div>					
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="educationModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submit()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Edit Informasi Pendidikan</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Pendidikan Terakhir</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.lastEducation" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Catatan Pendidikan Terakhir</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.educationNotes" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Jurusan/Fakultas</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.major" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Gelar</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.title" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Spesialisasi</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="personDetail.specialization" class="form-control" value="">
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
