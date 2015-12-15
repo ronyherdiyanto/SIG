@@ -35,16 +35,29 @@ var singleton = function() {
 	}
 	
 	this.setupService = function(app) {
+		app.post('/jemaatRegister/:idJemaat', function(req, res) {
+			console.log(req.params.idJemaat);
+			var jemaat = req.body;
+			var oJemaat = orm.model("jemaat");
+			var newJemaat = self.mapDTOtoModel(jemaat);
+			
+			oJemaat.update(
+					newJemaat,
+					{
+						where : {idJemaat : req.params.idJemaat}
+					}
+			);
+		});
+		
 		app.post('/jemaatRegister', function(req, res) {
 			var jemaat = req.body;
 			var oJemaat = orm.model("jemaat");
-			var newJemaat = self.mapDTOtoModel(jemaat); 
-
+			var newJemaat = self.mapDTOtoModel(jemaat);
+			
 			oJemaat.build(newJemaat).save().then(function(result) {
 				res.send(result);
+				
 			});
-
-			
 		});
 
 		app.get('/jemaatRegister', function(req, res) {
@@ -60,6 +73,8 @@ var singleton = function() {
 				res.send(result);
 			});
 		});		
+		
+		
 	}
 	
 };

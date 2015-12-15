@@ -111,7 +111,17 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Tanggal Lahir</label>
 						<div class="col-xs-8">
-							<input type="date" name="birthPlace" ng-model="jemaat.dateOfBirth"class="form-control" value="">
+							<p class="input-group">
+								<input type="text" name="dateOfBirth"
+									ng-model="jemaat.dateOfBirth"
+									datepicker-popup="dd-MM-yyyy" is-open="isDobOpen"
+									close-text="Close" class="form-control" value=""> 
+								<span class="input-group-btn">
+									<button class="btn btn-default" ng-click="open($event)">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+								</span>
+							</p>
 						</div>
 					</div>
 					<div class="form-group">

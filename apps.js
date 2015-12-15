@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mustacheExpress = require('mustache-express');
 var app = express();
 var path = require("path");
+var config = require('./common/config');
 
 app.engine('html',mustacheExpress()); // load mustache templating in case needed
 app.set('view engine','html');
@@ -13,9 +14,9 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 var orm = require("./common/model");
-orm.setup(process.cwd()+'/models/registers', "skeletondb","root", "password", {
-			host : 'localhost',
-			port : 3306,
+orm.setup(process.cwd()+'/models/registers', config.mysql.dbName,config.mysql.userName, config.mysql.password, {
+			host : config.mysql.url,
+			port : config.mysql.port,
 			dialect : 'mysql',
 			pool : {
 				max : 1,

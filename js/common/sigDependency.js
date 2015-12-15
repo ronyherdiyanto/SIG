@@ -1,0 +1,1 @@
+angular.module('jemaat', ['ui.router','ui.bootstrap']);

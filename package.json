@@ -7,8 +7,6 @@
   "mustache" : "2.2.0",
   "mustache-express" : "1.2.1",
   "mysql" : "2.9.0",
-  "sequelize" : "3.7.1",
-  "sync" : "0.2.5",
-  "synchronize" : "0.9.14" 
+  "sequelize" : "3.7.1"
 }
 }
