@@ -2,10 +2,10 @@ var config = {};
 
 config.mysql = {};
 
-config.mysql.url = 'localhost';
-config.mysql.port = 3306;
+config.mysql.url = 'sig.cu131dmzk4oa.us-west-2.rds.amazonaws.com';
+config.mysql.port = 7777;
 config.mysql.dbName = 'skeletondb';
-config.mysql.userName = 'root';
-config.mysql.password = 'password';
+config.mysql.userName = 'ronyherdiyanto';
+config.mysql.password = 'ronelits131081';
 
 module.exports = config;
