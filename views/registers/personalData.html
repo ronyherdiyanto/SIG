@@ -23,7 +23,7 @@
 
 				<div class="list-group">
 					<div ng-repeat="person in personalDatas">
-						<a class="list-group-item pjax {{person.status}}" href ui-sref="personalData.detail({idJemaat : {{person.idJemaat}}})" ng-click="setSelected(person);">
+						<a class="list-group-item pjax {{person.status}}" href ui-sref="{{personalDataRoute}}({idJemaat : {{person.idJemaat}}})" ng-click="setSelected(person);">
 							<h4 class="list-group-item-heading">{{person.firstName + ' ' + person.lastName}}</h4>
 							<p class="list-group-item-text">{{person.memberRelationship}}</p>
 						</a>
@@ -81,13 +81,13 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Status Keanggotaan</label>
 						<div class="col-xs-8">
-							<input type="text" name="status" ng-model="jemaat.status" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.status" ng-options="status for status in statuses"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Hubungan Antar Anggota</label>
 						<div class="col-xs-8">
-							<input type="text" name="memberRelationship" ng-model="jemaat.memberRelationship" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.memberRelationship" ng-options="membership for membership in membershipRelationship"></select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -133,26 +133,26 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Jenis Kelamin</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="jemaat.gender" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.gender" ng-options="gend for gend in gender"></select>
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Golongan Darah</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="jemaat.bloodType" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.bloodType" ng-options="blood for blood in bloodType"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Rhesus</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="jemaat.rhesus" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.rhesus" ng-options="rhs for rhs in rhesus"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Setuju Donor?</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="jemaat.agreeDonor" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.agreeDonor" ng-options="dnr for dnr in agreeDonor"></select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -196,7 +196,7 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Pendidikan Terakhir</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="jemaat.lastEducation" class="form-control" value="">
+							<select class="form-control" ng-model="jemaat.lastEducation" ng-options="edc for edc in education"></select>
 						</div>
 					</div>
 					<div class="form-group">

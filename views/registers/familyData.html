@@ -1,0 +1,111 @@
+<div class="col-sm-7 bootcards-cards" id="listDetails">
+
+	<!--contact details & notes-->
+
+	<div id="contactCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Data Keluarga</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#familyDataModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs" data-toggle="modal" data-target="#familyDataModal"> 
+					<i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>ID</label>
+					<h4 class="list-group-item-heading">{{familyData.idJemaat}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Ayah</label>
+					<h4 class="list-group-item-heading">{{familyData.fatherName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Ibu</label>
+					<h4 class="list-group-item-heading">{{familyData.motherName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Jika Menikah</label>
+				</div>
+				<div class="list-group-item">
+					<label>Nama Istri/Suami</label>
+					<h4 class="list-group-item-heading">{{familyData.wifehusbandName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Tanggal Pernikahan</label>
+					<h4 class="list-group-item-heading">{{familyData.weddingDate}}</h4>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+		
+</div>
+
+<!--modals-->
+<div class="modal fade" id="familyDataModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submitFamilyData()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Data Keluarga</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Ayah</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="familyData.fatherName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Ibu</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="familyData.motherName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Nama Istri/Suami</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="familyData.wifehusbandName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tanggal Pernikahan</label>
+						<div class="col-xs-8">
+							<p class="input-group">
+							<input type="text" name="gender" datepicker-popup="dd-MM-yyyy" is-open="isWeddingDateOpen"
+									close-text="Close" ng-model="familyData.weddingDate" class="form-control" value="">
+							<span class="input-group-btn">
+									<button class="btn btn-default" ng-click="openWeddingDate()">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+							</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+

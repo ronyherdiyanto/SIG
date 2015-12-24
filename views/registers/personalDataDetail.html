@@ -1,5 +1,5 @@
 
-<div class="col-sm-7 bootcards-cards hidden-xs" id="listDetails">
+<div class="col-sm-7 bootcards-cards" id="listDetails">
 
 	<!--contact details & notes-->
 
@@ -50,6 +50,10 @@
 				<div class="list-group-item">
 					<label>Tempat Lahir</label>
 					<h4 class="list-group-item-heading">{{personDetail.birthPlace}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Tanggal Lahir</label>
+					<h4 class="list-group-item-heading">{{personDetail.dateOfBirth}}</h4>
 				</div>
 				<div class="list-group-item">
 					<label>Suku</label>
@@ -252,13 +256,13 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Status Keanggotaan</label>
 						<div class="col-xs-8">
-							<input type="text" name="status" ng-model="personDetail.status" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.status" ng-options="status for status in statuses"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Hubungan Antar Anggota</label>
 						<div class="col-xs-8">
-							<input type="text" name="memberRelationship" ng-model="personDetail.memberRelationship" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.memberRelationship" ng-options="membership for membership in membershipRelationship"></select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -304,7 +308,7 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Jenis Kelamin</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="personDetail.gender" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.gender" ng-options="gend for gend in gender"></select>
 						</div>
 					</div>					
 				</div>
@@ -338,19 +342,19 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Golongan Darah</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="personDetail.bloodType" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.bloodType" ng-options="blood for blood in bloodType"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Rhesus</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="personDetail.rhesus" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.rhesus" ng-options="rhs for rhs in rhesus"></select>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Setuju Donor?</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="personDetail.agreeDonor" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.agreeDonor" ng-options="dnr for dnr in agreeDonor"></select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -448,7 +452,7 @@
 					<div class="form-group">
 						<label class="col-xs-4 control-label">Pendidikan Terakhir</label>
 						<div class="col-xs-8">
-							<input type="text" name="gender" ng-model="personDetail.lastEducation" class="form-control" value="">
+							<select class="form-control" ng-model="personDetail.lastEducation" ng-options="edc for edc in education"></select>
 						</div>
 					</div>
 					<div class="form-group">

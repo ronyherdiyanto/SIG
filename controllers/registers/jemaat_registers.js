@@ -32,7 +32,35 @@ var singleton = function() {
 					
 			};
 		return newJemaat;
-	}
+	};
+	
+	this.getNewKeanggotaanGereja = function() {
+		var keanggotaanGereja = {
+				idJemaat : '',
+				baptisanChildDate: '',
+		        churchName : '',
+		        baptisanDewasa : '',
+		        baptisanDate : '',
+		        baptisanDwsJemaat : '',
+		        pendetaName : '',
+		        churchAddress : '',
+		        pendetaBaptDws : '',
+		        churchAddressBaptDws : '',
+		};
+		return keanggotaanGereja;
+	};
+	
+	this.getNewFamilyData = function() {
+		var familyData = {
+				idJemaat : '',
+				fatherName: '',
+		        motherName : '',
+		        wifehusbandName : '',
+		        weddingDate : ''
+		};
+		return familyData;
+	};
+	
 	
 	this.setupService = function(app) {
 		app.post('/jemaatRegister/:idJemaat', function(req, res) {
@@ -53,10 +81,25 @@ var singleton = function() {
 			var jemaat = req.body;
 			var oJemaat = orm.model("jemaat");
 			var newJemaat = self.mapDTOtoModel(jemaat);
+			var oKeanggotaanGereja = orm.model('keanggotaanGereja');
+			var oFamilyData = orm.model('familyData');			
 			
-			oJemaat.build(newJemaat).save().then(function(result) {
-				res.send(result);
+			oJemaat.build(newJemaat).save().then(function(resultNewJemaat) {
+				var keanggotaanGereja = self.getNewKeanggotaanGereja();
+				keanggotaanGereja.idJemaat = resultNewJemaat.idJemaat;
 				
+				oKeanggotaanGereja.build(keanggotaanGereja).save().then(function(result) {
+					
+				});
+				
+				var familyData = self.getNewFamilyData();
+				familyData.idJemaat = resultNewJemaat.idJemaat;
+				
+				oFamilyData.build(familyData).save().then(function(result) {
+					
+				});
+				
+				res.send(resultNewJemaat);
 			});
 		});
 

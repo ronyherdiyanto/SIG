@@ -33,6 +33,12 @@ app.use(express.static(__dirname + '/js'));
 var jemaatRegisters = require("./controllers/registers/jemaat_registers");
 jemaatRegisters.setupService(app);
 
+var churchMembership = require("./controllers/registers/churchMembership_registers");
+churchMembership.setupService(app);
+
+var familyData = require("./controllers/registers/familyData_registers");
+familyData.setupService(app);
+
 // All of routes for application
 app.get('/', function(request, response){
     response.sendFile(process.cwd() + '/views/registers/jemaat.html');
@@ -46,7 +52,16 @@ app.get('/personalDataDetail', function(request, response){
 	response.sendFile(process.cwd() + '/views/registers/personalDataDetail.html');
 });
 
-var server = app.listen(8081, function () {
+app.get('/churchMembership', function(request, response){
+	response.sendFile(process.cwd() + '/views/registers/churchMembership.html');
+});
+
+app.get('/familyData', function(request, response){
+	response.sendFile(process.cwd() + '/views/registers/familyData.html');
+});
+
+
+var server = app.listen(process.env.PORT || 8081, function () {
   var host = server.address().address
   var port = server.address().port
 

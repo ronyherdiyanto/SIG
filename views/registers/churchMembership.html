@@ -1,0 +1,174 @@
+
+<div class="col-sm-7 bootcards-cards" id="listDetails">
+
+	<!--contact details & notes-->
+
+	<div id="contactCard">
+
+		<div class="panel panel-default">
+			<div class="panel-heading clearfix">
+				<h3 class="panel-title pull-left">Keanggotaan Gereja</h3>
+				<div class="btn-group pull-right visible-xs">
+					<a class="btn btn-primary" data-toggle="modal" data-target="#churchMembershipModal"> <i
+						class="fa fa-pencil"></i> <span>Edit</span>
+					</a>
+				</div>
+				<a class="btn btn-primary pull-right hidden-xs" data-toggle="modal"
+					data-target="#churchMembershipModal"> <i class="fa fa-pencil"></i> <span>Edit</span>
+				</a>
+			</div>
+			<div class="list-group">
+				<div class="list-group-item">
+					<label>ID</label>
+					<h4 class="list-group-item-heading">{{churchMembership.idJemaat}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Tanggal Baptisan Anak</label>
+					<h4 class="list-group-item-heading">{{churchMembership.baptisanChildDate}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Jemaat (Gereja)</label>
+					<h4 class="list-group-item-heading">{{churchMembership.churchName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Baptisan Dewasa/Sidi</label>
+					<h4 class="list-group-item-heading">{{churchMembership.baptisanDewasa}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Tanggal Baptisan</label>
+					<h4 class="list-group-item-heading">{{churchMembership.baptisanDate}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>BaptDwsJemaat(Gereja)</label>
+					<h4 class="list-group-item-heading">{{churchMembership.baptisanDwsJemaat}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Oleh Pendeta</label>
+					<h4 class="list-group-item-heading">{{churchMembership.pendetaName}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>Alamat Gereja</label>
+					<h4 class="list-group-item-heading">{{churchMembership.churchAddress}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>BaptDwsOlehPendeta</label>
+					<h4 class="list-group-item-heading">{{churchMembership.pendetaBaptDws}}</h4>
+				</div>
+				<div class="list-group-item">
+					<label>BaptDwsAlamatGereja</label>
+					<h4 class="list-group-item-heading">{{churchMembership.churchAddressBaptDws}}</h4>
+				</div>
+			</div>
+			<div class="panel-footer">
+				<small class="pull-left">Built with Bootcards - Base Card</small> <a
+					class="btn btn-link btn-xs pull-right"
+					href="/snippets/base-card-form" data-toggle="modal"
+					data-target="#docsModal"> View Source</a>
+			</div>
+		</div>
+
+	</div>
+	
+		
+</div>
+
+<!--modals-->
+<div class="modal fade" id="churchMembershipModal" tabindex="-1" role="dialog"
+	aria-labelledby="editModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<form name="addForm" class="form-horizontal">
+				<div class="modal-header">
+					<div class="btn-group pull-left">
+						<button class="btn btn-danger" data-dismiss="modal">
+							Cancel</button>
+					</div>
+
+					<div class="btn-group pull-right">
+						<button class="btn btn-success" data-dismiss="modal" ng-click="submitChurchMembership()">
+							Save</button>
+					</div>
+
+					<h4 class="modal-title">Edit Keanggotaan Gereja</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tanggal Baptisan Anak</label>
+						<div class="col-xs-8">
+							<p class="input-group">
+							<input type="text" name="gender" datepicker-popup="dd-MM-yyyy" is-open="isBaptisanChildDateOpen"
+									close-text="Close" ng-model="churchMembership.baptisanChildDate" class="form-control" value="">
+							<span class="input-group-btn">
+								<button class="btn btn-default" ng-click="openBaptisanChildDate();">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+								
+							</span>
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Jemaat (Gereja)</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.churchName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Baptisan Dewasa/Sidi</label>
+						<div class="col-xs-8">
+							<select class="form-control" ng-model="churchMembership.baptisanDewasa" ng-options="baptisan for baptisan in baptisanType"></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Tanggal Baptisan</label>
+						<div class="col-xs-8">
+							<p class="input-group">
+							<input type="text" name="gender" datepicker-popup="dd-MM-yyyy" is-open="isBaptisanDateOpen"
+									close-text="Close" ng-model="churchMembership.baptisanDate" class="form-control" value="">
+							<span class="input-group-btn">
+								<button class="btn btn-default" ng-click="openBaptisanDate();">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">BaptDwsJemaat(Gereja)</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.baptisanDwsJemaat" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Oleh Pendeta</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.pendetaName" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">Alamat Gereja</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.churchAddress" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">BaptDwsOlehPendeta</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.pendetaBaptDws" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">BaptDwsAlamatGereja</label>
+						<div class="col-xs-8">
+							<input type="text" name="gender" ng-model="churchMembership.churchAddressBaptDws" class="form-control" value="">
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
